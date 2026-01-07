@@ -3,8 +3,8 @@ local uis = cloneref(game:GetService("UserInputService"))
 local cantuse 
 if not isfolder("JumperV2") then
 cloneref(game:GetService("StarterGui")):SetCore("SendNotification", {
-        Title = "Welcome to the Game!"; 
-        Text = "👽"; 
+        Title = "Takes a sec to load when using for the first time", 
+        Text = "👽",
         Duration = 5 
     })
 
