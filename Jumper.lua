@@ -1,19 +1,30 @@
 local cloneref = cloneref or function(x) return x end
 local uis = cloneref(game:GetService("UserInputService"))
+local cantuse 
 if not isfolder("JumperV2") then
 cloneref(game:GetService("StarterGui")):SetCore("SendNotification", {
-        Title = "Welcome to the Game!"; -- Title text
-        Text = "Enjoy your stay, " .. LocalPlayer.DisplayName .. "!"; -- Main message
-        Icon = "rbxassetid://10022562411"; -- Optional: Asset ID for an icon (replace with your own)
-        Duration = 5 -- How long it stays (in seconds)
+        Title = "Welcome to the Game!"; 
+        Text = "👽"; 
+        Duration = 5 
     })
-end)
+
 
 end
-if uis.TouchEnabled then
+
+if identifyexecutor() == "Xeno" or identifyexecutor() == "Solara" then
+cantuse = true
+cloneref(game:GetService("StarterGui")):SetCore("SendNotification", {
+        Title = identifyexecutor() .. "not supported",
+        Text = "Use a better executor",
+        Duration = 5 
+    })
+
+
+end
+if uis.TouchEnabled and not cantuse then
  loadstring(game:HttpGet("https://raw.githubusercontent.com/solarastuff/sorryjimpee/refs/heads/main/JumperMobile.lua"))()
 end
-if not uis.TouchEnabled then
+if not uis.TouchEnabled and not cantuse then
   loadstring(game:HttpGet("https://raw.githubusercontent.com/solarastuff/sorryjimpee/refs/heads/main/JumperPC.lua"))()
 
 end
