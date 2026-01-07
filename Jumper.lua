@@ -14,7 +14,7 @@ end
 if identifyexecutor() == "Xeno" or identifyexecutor() == "Solara" then
 cantuse = true
 cloneref(game:GetService("StarterGui")):SetCore("SendNotification", {
-        Title = identifyexecutor() .. "not supported",
+        Title = identifyexecutor() .. " not supported",
         Text = "Use a better executor",
         Duration = 5 
     })
